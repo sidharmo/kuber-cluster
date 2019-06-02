@@ -1,0 +1,8 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Disable SELinux
+      selinux:
+        state: disabled
+    - name: Reboot Machine
+      reboot:

@@ -1,0 +1,9 @@
+- hosts: mandor
+  become: yes
+  tasks:
+    - name: Enable SELinux
+      selinux:
+        policy: targeted
+        state: enforcing
+    - name: Reboot Machine
+      reboot:
